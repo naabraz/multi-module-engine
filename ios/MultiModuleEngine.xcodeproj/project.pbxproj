@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		719498F98232349AF92EE1E4 /* Pods_MultiModuleEngine_MultiModuleEngineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2F3BCCDB6DD7F90AB744897 /* Pods_MultiModuleEngine_MultiModuleEngineTests.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9C005FBC295F2221007E53D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C005FBB295F2221007E53D3 /* GoogleService-Info.plist */; };
 		DCD96B0EB8F1170D7BBC4544 /* Pods_MultiModuleEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDB2D58E3E9025BC65BF32E /* Pods_MultiModuleEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		6BDB2D58E3E9025BC65BF32E /* Pods_MultiModuleEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiModuleEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MultiModuleEngine/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MultiModuleEngine-MultiModuleEngineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiModuleEngine-MultiModuleEngineTests.release.xcconfig"; path = "Target Support Files/Pods-MultiModuleEngine-MultiModuleEngineTests/Pods-MultiModuleEngine-MultiModuleEngineTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C005FBB295F2221007E53D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F2F3BCCDB6DD7F90AB744897 /* Pods_MultiModuleEngine_MultiModuleEngineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiModuleEngine_MultiModuleEngineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9C005FBB295F2221007E53D3 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* MultiModuleEngine */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MultiModuleEngineTests */,
@@ -246,6 +249,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9C005FBC295F2221007E53D3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
