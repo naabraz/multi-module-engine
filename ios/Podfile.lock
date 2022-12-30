@@ -510,6 +510,8 @@ DEPENDENCIES:
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Google-Maps-iOS-Utils
+  - GoogleMaps
   - hermes-engine (from `../node_modules/react-native/sdks/hermes/hermes-engine.podspec`)
   - libevent (~> 2.1.12)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
@@ -722,15 +724,15 @@ SPEC CHECKSUMS:
   React-RCTVibration: 8e5c8c5d17af641f306d7380d8d0fe9b3c142c48
   React-runtimeexecutor: 7401c4a40f8728fd89df4a56104541b760876117
   ReactCommon: c9246996e73bf75a2c6c3ff15f1e16707cdc2da9
-  RNFBAnalytics: 116338d7e03126a5782412dbd7410139898cdb35
-  RNFBApp: 9295dac8a4e8857918bcff90328b197807ee0dc1
-  RNFBCrashlytics: 8fb4f394b2bb50216acaf529c682502021c412f4
-  RNFBMessaging: 1a84a46789e1ee9820d70839683faff890a22411
-  RNFBPerf: 9efcef95301ab1eaad86b072eca07790f4dfab55
-  RNFBRemoteConfig: c6c5e360b34ca49251a8c4e2c3ae2e652e1ac5c7
+  RNFBAnalytics: ecfc88d832496f624d1bc9c84bc8d23b194994f2
+  RNFBApp: 2b3e57f4eecd9cfe8a5dd2ea8ed27a87fbc6eada
+  RNFBCrashlytics: 78e6acca658f2d244ea96d1b12d9daa222d02c86
+  RNFBMessaging: c88867b6c9d16d3ba349c7ab4a1a8948fb71e2f6
+  RNFBPerf: ea0933fbe19b9c474b7b2851a88ddaea66782988
+  RNFBRemoteConfig: 2e1588824db99f8ec530faea47147e6b12bee47d
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
   Yoga: eca980a5771bf114c41a754098cd85e6e0d90ed7
 
-PODFILE CHECKSUM: e700e1292a5786c886c3f0a00f56a0f733b939d9
+PODFILE CHECKSUM: 6b075aa22cdb12c7d0518dbb957f52f04e4bebf5
 
 COCOAPODS: 1.11.3
