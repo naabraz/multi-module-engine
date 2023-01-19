@@ -4,6 +4,9 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
 
+pod 'GoogleMaps'
+pod 'Google-Maps-iOS-Utils'
+
 target 'MultiModuleEngine' do
   use_frameworks! :linkage => :static
   $RNFirebaseAsStaticFramework = true
@@ -11,68 +14,38 @@ target 'MultiModuleEngine' do
   # react-native-google-maps
   rn_maps_path = '../node_modules/react-native-maps'
   pod 'react-native-google-maps', :path => rn_maps_path
-  pod 'GoogleMaps'
-  pod 'Google-Maps-iOS-Utils'
+  pod 'react-native-maps', :path => rn_maps_path
 
   config = use_native_modules!
 
-  # Flags change depending on the env values.
   flags = get_default_flags()
 
   use_react_native!(
     :path => config[:reactNativePath],
-    # Hermes is now enabled by default. Disable by setting this flag to false.
-    # Upcoming versions of React Native may rely on get_default_flags(), but
-    # we make it explicit here to aid in the React Native upgrade process.
     :hermes_enabled => true,
     :fabric_enabled => flags[:fabric_enabled],
-    # Enables Flipper.
-    #
-    # Note that if you have use_frameworks! enabled, Flipper will not work and
-    # you should disable the next line.
-    # :flipper_configuration => FlipperConfiguration.enabled,
-    # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
   target 'MultiModuleEngineTests' do
     inherit! :complete
-    # Pods for testing
-  end
-
-  # Script to enable the usage of use_frameworks with hermes enabled
-  # https://github.com/react-native-maps/react-native-maps/discussions/4389#discussioncomment-3746174
-  $static_library = [
-    'Google-Maps-iOS-Utils',
-    'react-native-google-maps',
-    'react-native-maps',
-  ]
-
-  pre_install do |installer|
-    Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
-    installer.pod_targets.each do |pod|
-      bt = pod.send(:build_type)
-      if $static_library.include?(pod.name)
-        puts "Overriding the build_type to static_library from static_framework for #{pod.name}"
-        def pod.build_type;
-          Pod::BuildType.static_library
-        end
-      end
-    end
-    installer.pod_targets.each do |pod|
-      bt = pod.send(:build_type)
-      puts "#{pod.name} (#{bt})"
-      puts "  linkage: #{bt.send(:linkage)} packaging: #{bt.send(:packaging)}"
-    end
   end
 
   post_install do |installer|
+
     react_native_post_install(
       installer,
-      # Set `mac_catalyst_enabled` to `true` in order to apply patches
-      # necessary for Mac Catalyst builds
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+    installer.pods_project.targets.each do |target|
+      if target.name == 'react-native-google-maps'
+        target.build_configurations.each do |config|
+          config.build_settings['CLANG_ENABLE_MODULES'] = 'No'
+      end
+    end
   end
+
+end
 end
